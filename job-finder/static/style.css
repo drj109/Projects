@@ -1,0 +1,11 @@
+* { box-sizing: border-box }
+body { background: #f4f1e9; color: #23392f; font: 17px/1.55 "DM Sans", system-ui, sans-serif; margin: 0 }
+main { max-width: 44rem; margin: 6vh auto; padding: 1.5rem }
+header span { letter-spacing: .18em; font-weight: 750 }
+h1 { font: bold clamp(2.4rem, 7vw, 4.8rem)/1.03 Georgia, serif; margin: 1rem 0 }
+form, article { background: white; padding: 1.25rem; border-radius: .6rem; margin: .8rem 0 }
+label, textarea { display: block; width: 100%; margin-bottom: .5rem }
+textarea, button { font: inherit; padding: .7rem }
+textarea { min-height: 5rem }
+button { background: #18513e; color: white; border: 0; border-radius: .4rem; cursor: pointer }
+h2, article p { margin: .25rem 0 }

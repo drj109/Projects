@@ -1,0 +1,59 @@
+name: Portfolio checks
+on: [push, pull_request]
+jobs:
+  matcher:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: job-finder
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q
+      - run: node --check static/main.js
+  mobile:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: practice-ladder
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install
+      - run: npm test
+      - run: npm run typecheck
+      - run: npx expo export --platform android
+  cli:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Festival itinerary
+        working-directory: set-planner
+        run: |
+          java Planner.java festival.tsv > result
+          diff -u <(printf '0-30  Juniper\n30-60  Soft Signal\n65-85  Last Train\nTotal points: 14\n') result
+      - name: Guitar fingering
+        working-directory: fret-path
+        run: |
+          c++ -std=c++17 -Wall -Wextra -pedantic main.cpp -o fret-path
+          ./fret-path 40 41 43 > result
+          diff -u <(printf 'Movement score: 3\nString 6, fret 0\nString 6, fret 1\nString 6, fret 3\n') result
+      - name: Visitor pipeline
+        working-directory: rush-hour
+        shell: bash
+        run: |
+          set -o pipefail
+          rustc --test peak.rs -o checks
+          ./checks
+          rustc peak.rs -o peak
+          go run normalize.go visits.csv | ./peak > result
+          diff -u <(printf 'Peak: 3 visitors at 12:07\n') result

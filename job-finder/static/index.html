@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>First Shift | Job finder</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><main id="app"><header><span>FIRST SHIFT</span><h1>Where could your skills fit?</h1><p>Explore eight sample entry-level roles. Describe something you already know how to do.</p></header>
+<form @submit.prevent="search"><label for="skills">My skills</label><textarea id="skills" v-model="skills" maxlength="2000" required></textarea><button :disabled="busy">{{busy ? 'Searching…' : 'Find matches'}}</button></form>
+<section aria-live="polite"><p>{{status}}</p><article v-for="job in results" :key="job.role"><h2>{{job.role}}</h2><p>Matching terms · {{job.terms.join(', ')}}</p><small>Similarity {{job.score.toFixed(3)}}</small></article></section></main>
+<script src="https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.prod.js"></script><script src="/static/main.js"></script></body></html>
