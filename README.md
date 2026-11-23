@@ -25,7 +25,3 @@ On macOS or Linux use `python3.12 -m venv .venv` and `.venv/bin/python` for the 
 ## Interpreting results
 
 Digit Reader uses the public handwritten digits dataset distributed with scikit-learn. Question Tagger uses original, hand-written examples. The other three projects simulate their inputs. Their metrics describe these experiments only. Each project README includes measured results and a follow-up experiment.
-
-## Development note
-
-OpenAI Codex generated the initial code, fixtures and documentation.
