@@ -1,0 +1,28 @@
+split	label	text
+train	math	Compare the denominators of these fractions.
+train	math	Find the area of the shaded rectangle.
+train	math	Solve the equation for the missing variable.
+train	math	Explain why these ratios are equivalent.
+train	math	Plot the ordered pair on a coordinate plane.
+train	math	Determine the median of the sample.
+train	science	Trace energy through the food web.
+train	science	Predict how sunlight affects evaporation.
+train	science	Describe how cells divide during growth.
+train	science	Identify the force acting on the cart.
+train	science	Explain the role of a battery in a circuit.
+train	science	Compare the habitats of frogs and lizards.
+train	reading	Identify the narrator of the story.
+train	reading	Explain how the author develops a claim.
+train	reading	Which quotation supports the central idea?
+train	reading	Describe the conflict in the passage.
+train	reading	Compare the points of view in these poems.
+train	reading	How does the setting shape the plot?
+test	math	Which rectangle has the larger area?
+test	math	Compare two fractions with unlike denominators.
+test	math	How many beats make up half a bar?
+test	science	Which force keeps the cart from rolling farther?
+test	science	What happens to the circuit if the battery is removed?
+test	science	Where does a seed get what it needs to sprout?
+test	reading	Find a quotation that reveals the narrator's attitude.
+test	reading	How does the passage support the author's claim?
+test	reading	Why might the speaker repeat the final line?
